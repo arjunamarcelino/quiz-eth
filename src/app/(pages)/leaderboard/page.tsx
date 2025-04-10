@@ -1,6 +1,6 @@
 "use client";
 
-import { getContract } from "@/services/contract";
+import { getLeaderboardData } from "@/services/leaderboard";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
@@ -8,12 +8,6 @@ import toast from "react-hot-toast";
 type LeaderboardEntry = {
   player: string;
   score: number;
-};
-
-export const getLeaderboardData = async () => {
-  const contract = await getContract();
-  const data = await contract.getLeaderboard();
-  return data;
 };
 
 const Leaderboard = () => {

@@ -1,7 +1,7 @@
 "use client";
 
 import { ChatWidget } from "@/components/ChatWidget";
-import { getContract } from "@/services/contract";
+import { getLeaderboardData } from "@/services/leaderboard";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
@@ -9,12 +9,6 @@ import toast, { Toaster } from "react-hot-toast";
 type LeaderboardEntry = {
   player: string;
   score: number;
-};
-
-export const getLeaderboardData = async () => {
-  const contract = await getContract();
-  const data = await contract.getLeaderboard();
-  return data;
 };
 
 const Home = () => {
