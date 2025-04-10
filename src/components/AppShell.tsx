@@ -1,11 +1,9 @@
 "use client";
 
-import { useAccount } from "wagmi";
 import Navbar from "./Navbar";
 import { usePathname } from "next/navigation";
 
 const AppShell = ({ children }: { children: React.ReactNode }) => {
-  const { isConnected } = useAccount();
   const pathname = usePathname();
   return (
     <main className="min-h-screen relative">
