@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { allQuestions } from "@/services/question";
 import toast from "react-hot-toast";
 import { getContract, getSigner } from "@/services/contract";
+import { formatUnits } from "ethers";
 
 // Function to get 5 random questions
 const getRandomQuestions = () => {
@@ -152,7 +153,7 @@ export default function Quiz() {
             <p className="text-lg">
               Highest Score:{" "}
               <span className="font-bold text-yellow-400">
-                {onChainHighestScore}/5
+                {onChainHighestScore}/10
               </span>
             </p>
             <p className="text-lg">
@@ -177,7 +178,8 @@ export default function Quiz() {
             <p className="text-lg">
               Reward:{" "}
               <span className="font-bold text-green-400">
-                {onChainReward} QET
+                {Number(formatUnits(onChainReward.toString(), 18)).toFixed(4)} QET
+
               </span>
               {onChainReward > 0 && (
                 <button

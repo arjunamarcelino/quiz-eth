@@ -1,5 +1,6 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import Link from "next/link";
+import Image from "next/image";
 
 const Navbar = () => {
   return (
@@ -60,41 +61,48 @@ const Navbar = () => {
         </div>
         <Link
           href="/"
-          className="text-2xl font-bold tracking-widest text-purple-400 hover:text-purple-300 transition-all"
+          className="items-center flex flex-row text-2xl font-bold tracking-widest text-purple-400 hover:text-purple-300 transition-all"
         >
-          QuizETH
+          <Image
+            src="/QuizETH-logo.png"
+            alt="QuizETH Logo"
+            width={40}
+            height={40}
+            className="rounded"
+          />
+          uizETH
         </Link>
-      </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <Link href="/" className="hover:text-purple-400 transition-all">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link href="/quiz" className="hover:text-purple-400 transition-all">
-              Quiz
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/leaderboard"
-              className="hover:text-purple-400 transition-all"
-            >
-              Leaderboard
-            </Link>
-          </li>
-          <li>
-            <a
-              href="https://github.com/ikhwanhsn/quiz-eth"
-              target="_blank"
-              className="hover:text-purple-400 transition-all"
-            >
-              Documentation
-            </a>
-          </li>
-        </ul>
+        <div className="hidden lg:flex">
+          <ul className="menu menu-horizontal px-1">
+            <li>
+              <Link href="/" className="hover:text-purple-400 transition-all">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/quiz" className="hover:text-purple-400 transition-all">
+                Quiz
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/leaderboard"
+                className="hover:text-purple-400 transition-all"
+              >
+                Leaderboard
+              </Link>
+            </li>
+            <li>
+              <a
+                href="https://github.com/ikhwanhsn/quiz-eth"
+                target="_blank"
+                className="hover:text-purple-400 transition-all"
+              >
+                Documentation
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
       <div className="navbar-end">
         <ConnectButton />
