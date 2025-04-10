@@ -8,8 +8,7 @@ import "@/styles/globals.css";
 export const ChatWidget = () => {
   useEffect(() => {
     createChat({
-      webhookUrl:
-        "https://velobid.app.n8n.cloud/webhook/b23d725c-f978-4fdb-8c70-061d27a33aa8/chat",
+      webhookUrl: process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL,
       webhookConfig: {
         method: "POST",
         headers: {},
